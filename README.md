@@ -80,7 +80,7 @@ This repository serves as an example to show how to implement security measures 
 You can further improve my code to make it even more robust. For example:
 
 - By implementing a checksum that verifies all files using SHA256 to detect any modifications or tampering
-- By adding useless strings and cloned functions of the critical `checkLicenseKey` function, connected to each other in a way that prolongs the search and the “puzzle solving” time, making it harder to figure out which is the real function the program actually uses
+- By adding useless strings and cloned functions of the critical `checkLicenseKey()` function, connected to each other in a way that prolongs the search and the “puzzle solving” time, making it harder to figure out which is the real function the program actually uses
 - By integrating VMProtect which converts code blocks into proprietary bytecode executed on an internal virtual machine and further encrypting strings and program functions
 - By adding additional anti debugger and anti-tamper protections and renaming functions and variables
 
