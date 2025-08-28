@@ -383,7 +383,7 @@ void checkLicenseKey(string inputKey, int pass)
         composeStr = "";
         messageOB = "";
 
-        string jsonData = "{\"" + unbuildString("qH1&vM5^xP2!cB7@jL6|xJ2!bL8^pD1&yF5#vR6|rK5^tD0!nF8&yQ3#sH7|") + "\":\"" + messageDE + "\"}";
+        string jsonData = "{ \"key\":\"" + messageDE + "\" }";
 
         messageDE = "";
 
@@ -391,7 +391,8 @@ void checkLicenseKey(string inputKey, int pass)
         curl = curl_easy_init();
 
         if (curl) {
-            curl_easy_setopt(curl, CURLOPT_URL, unbuildString("nD0&fG4^sH7!pM2@xQ9|wB1&cR5^vK3!jL8@tF2|wB1&cR5^vK3!jL8@tF2|hL9^qB4!nP1&yD6#sR3|xJ1&vF8^mK2!cT5#bH0|pF9&kN2^dS0!hL4#tR7|pF9&kN2^dS0!hL4#tR7|zC0&nV8^kP2!jM5@tF4|hL3!qB7^nP0&yD2#sR9|nD3&fG5^sH8!pM0@xQ1|wB0&cR4^vK7!jL2#tF9|dQ6!fR1^sH3&yL5#pK7|wB0&cR4^vK7!jL2#tF9|dQ6!fR1^sH3&yL5#pK7|wB0&cR4^vK7!jL2#tF9|zC0&nV8^kP2!jM5@tF4|xJ1&vF8^mK2!cT5#bH0|mH8!kS0^qD4&nL2#zJ5|dQ6!fR1^sH3&yL5#pK7|dQ6!fR1^sH3&yL5#pK7|dQ6!fR1^sH3&yL5#pK7|pF9&kN2^dS0!hL4#tR7|tF5^hD1!nP6&yL2#sG8|nD0&fG4^sH7!pM2@xQ9|xJ2!bL8^pD1&yF5#vR6|tF5^hD1!nP6&yL2#sG8|qH1&vM5^xP2!cB7@jL6|yL0&nC5^rJ2!vK7#bT1|qH1&vM5^xP2!cB7@jL6|xJ2!bL8^pD1&yF5#vR6|rK5^tD0!nF8&yQ3#sH7|")); // Change endpoint here
+            // Change endpoint here
+            curl_easy_setopt(curl, CURLOPT_URL, unbuildString("nD0&fG4^sH7!pM2@xQ9|wB1&cR5^vK3!jL8@tF2|wB1&cR5^vK3!jL8@tF2|hL9^qB4!nP1&yD6#sR3|xJ1&vF8^mK2!cT5#bH0|pF9&kN2^dS0!hL4#tR7|pF9&kN2^dS0!hL4#tR7|zC0&nV8^kP2!jM5@tF4|hL3!qB7^nP0&yD2#sR9|nD3&fG5^sH8!pM0@xQ1|wB0&cR4^vK7!jL2#tF9|dQ6!fR1^sH3&yL5#pK7|wB0&cR4^vK7!jL2#tF9|dQ6!fR1^sH3&yL5#pK7|wB0&cR4^vK7!jL2#tF9|zC0&nV8^kP2!jM5@tF4|xJ1&vF8^mK2!cT5#bH0|mH8!kS0^qD4&nL2#zJ5|dQ6!fR1^sH3&yL5#pK7|dQ6!fR1^sH3&yL5#pK7|dQ6!fR1^sH3&yL5#pK7|pF9&kN2^dS0!hL4#tR7|tF5^hD1!nP6&yL2#sG8|nD0&fG4^sH7!pM2@xQ9|xJ2!bL8^pD1&yF5#vR6|tF5^hD1!nP6&yL2#sG8|qH1&vM5^xP2!cB7@jL6|yL0&nC5^rJ2!vK7#bT1|qH1&vM5^xP2!cB7@jL6|xJ2!bL8^pD1&yF5#vR6|rK5^tD0!nF8&yQ3#sH7|").c_str()); // Change endpoint here
 
             curl_easy_setopt(curl, CURLOPT_POST, 1L);
             curl_easy_setopt(curl, CURLOPT_POSTFIELDS, jsonData.c_str());
@@ -437,12 +438,12 @@ void checkLicenseKey(string inputKey, int pass)
         composeString(inputKey);
 
         encryp.inputKey = composeStr;
-        messageDE = encryp.DEobfuscate();
 
         composeStr = "";
         messageOB = "";
+        messageDE = "";
 
-        if (messageDE == "VALID")
+        if (encryp.DEobfuscate() == unbuildString("eQ8^hG2!cM5&nT0#kJ6|f3!K9m@Z2xP&dQ7vR$1|fX3!rS6@dL9^mT2&yK1|U5!gH2^sD8#oF1&zQ4|aP1$wE4@cZ8^vR7tL9&|"))
         {
             cout << unbuildString("eQ8^hG2!cM5&nT0#kJ6|rL2^pH8!dS5&kN1#fT6|rK8!tD3^nF1&yQ5#sH2|yL2!mC8^rJ1&vK5#bT6|kQ0&fV4^rH7!cN3@wM9| |rK8!tD3^nF1&yQ5#sH2|yL2!mC8^rJ1&vK5#bT6|tF5^hD1!nP6&yL2#sG8|xJ2!bL8^pD1&yF5#vR6|dQ2&fR7^sH1!pL5@xK8|mH2^kS9!qD0&nL5#zJ7|xJ2!bL8^pD1&yF5#vR6| |qH1&vM5^xP2!cB7@jL6|xJ2!bL8^pD1&yF5#vR6|rK5^tD0!nF8&yQ3#sH7|qH7&vM2^xP5!cB0#jL3| |wR1!sL9@bV4^tP3&xH7|xJ2!bL8^pD1&yF5#vR6|rK8!tD3^nF1&yQ5#sH2|tF5^hD1!nP6&yL2#sG8|zC5!rV3^kN2&jM7#tF1|bN4^mJ0!vL6&kT3#wP7|xJ2!bL8^pD1&yF5#vR6| |nD7!fG0^sH4&yM2#pQ6|mH2^kS9!qD0&nL5#zJ7|xJ2!bL8^pD1&yF5#vR6|tP3!dL8^rN1&yF6#kV4| |xJ1&vF8^mK2!cT5#bH0|wB3!cR1^vK6&jL0#tF5|") << "\n\n";
             system("pause");
