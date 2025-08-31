@@ -9,6 +9,7 @@
 #include <winternl.h>
 #include <chrono>
 #include <curl/curl.h>
+#include "uselessString.h"
 
 using namespace std;
 
@@ -99,12 +100,12 @@ map<string, string> rebuild
     {"xJ1&vF8^mK2!cT5#bH0", ":"},
     {"tP4!dL0^rN7&yF3#kV1", "'"},
     {"mH2^kS6!qD0&nL5#zJ8", ","},
-{"wB0&cR4^vK7!jL2#tF9", "."},
-{"nD5!fG1^sH6&yM3#pQ0", "<"},
-{"yL3^mC0!rJ5&vK8#bT2", ">"},
-{"pF9&kN2^dS0!hL4#tR7", "/"},
-{"qH4^vM1!xP3&cB6#jL0", "?"},
-{"bN7&jM0^vL3!kT6#wP1", "~"}
+    {"wB0&cR4^vK7!jL2#tF9", "."},
+    {"nD5!fG1^sH6&yM3#pQ0", "<"},
+    {"yL3^mC0!rJ5&vK8#bT2", ">"},
+    {"pF9&kN2^dS0!hL4#tR7", "/"},
+    {"qH4^vM1!xP3&cB6#jL0", "?"},
+    {"bN7&jM0^vL3!kT6#wP1", "~"}
 };
 
 atomic<bool> running(true);
@@ -383,7 +384,7 @@ void checkLicenseKey(string inputKey, int pass)
         composeStr = "";
         messageOB = "";
 
-        string jsonData = "{ \"key\":\"" + messageDE + "\" }";
+        string jsonData = "{ \"" + unbuildString("qH1&vM5^xP2!cB7@jL6|xJ2!bL8^pD1&yF5#vR6|rK5^tD0!nF8&yQ3#sH7|") + "\"" + unbuildString("xJ1&vF8^mK2!cT5#bH0|") + "\"" + messageDE + "\" }";
 
         messageDE = "";
 
@@ -464,13 +465,15 @@ int main()
 {
     initialization();  // Start the generator of random strings associated with letters / numbers
 
+    // It displays fake encrypted strings
+    _main();
+
     // Start anti-debugging checks
     thread worker1(DebuggerChecker1);
     thread worker2(DebuggerChecker2);
     thread worker3(DebuggerChecker3);
 
     thread worker4(confusingNoise);  // Starts the function that does unnecessary things to generate 
-
 
     InternalEncryption encryp;
 
@@ -512,7 +515,22 @@ int main()
     composeStr = "";
     messageDE = "";
 
+    // Calling fake functions to mask the critical function
+    checkLicenseKey1(messageOB, 0);
+    checkLicenseKey2(messageOB, 0);
+    checkLicenseKey3(messageOB, 0);
+    checkLicenseKey4(messageOB, 0);
+
+    // Call to the real function
     checkLicenseKey(messageOB, 0);
+
+    // Calling fake functions to mask the critical function
+    checkLicenseKey5(messageOB, 0);
+    checkLicenseKey6(messageOB, 0);
+    checkLicenseKey7(messageOB, 0);
+    checkLicenseKey8(messageOB, 0);
+    checkLicenseKey9(messageOB, 0);
+    checkLicenseKey10(messageOB, 0);
 
 
     composeString(messageOB);
